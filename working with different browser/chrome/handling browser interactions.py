@@ -7,6 +7,9 @@ with sync_playwright() as playwright:
 
     # Print The Browser Type
     # print(browser.browser_type)
+
+    # Print Browser Version
+    # print(browser.version)
     
     # Launch the Chrome Browser in Headful Mode
     # browser = playwright.chromium.launch(headless=False)
