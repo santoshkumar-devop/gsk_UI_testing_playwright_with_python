@@ -20,6 +20,8 @@ with sync_playwright() as playwright:
     # Launch the Chrome Browser in Headful Mode and Maximize The Window
     browser = playwright.chromium.launch(headless=False, args=["--start-maximized"])
 
+    # Start tracing the logs and store in a variable
+
     # Open the New Page in Browser
     # page = browser.new_page()  
 
