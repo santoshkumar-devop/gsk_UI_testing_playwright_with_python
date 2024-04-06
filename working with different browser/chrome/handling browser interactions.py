@@ -5,12 +5,6 @@ with sync_playwright() as playwright:
     # Launch the Chrome Browser in Headless Mode
     # browser = playwright.chromium.launch()
 
-    # Print The Browser Type
-    # print(browser.browser_type)
-
-    # Print Browser Version
-    # print(browser.version)
-
     # Launch the Chrome Browser in Headful Mode
     # browser = playwright.chromium.launch(headless=False)
 
@@ -25,7 +19,12 @@ with sync_playwright() as playwright:
 
     # no_viewport=True, gives you more control over the viewport size and allows you to manage the browser window's size and behavior according to your requirements.
     page = browser.new_page(no_viewport=True)
-    print(dir(page))
+
+    # Print The Browser Type
+    print(browser.browser_type)
+
+    # Print Browser Version
+    print(browser.version)
 
     # Goto to website
     page.goto(url)
