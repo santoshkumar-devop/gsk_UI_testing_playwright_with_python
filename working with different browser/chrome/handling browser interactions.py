@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright
 
 with sync_playwright() as playwright:
+    url = "https://playwright.dev/python/"
     # Launch the Chrome Browser in Headless Mode
     # browser = playwright.chromium.launch()
 
@@ -23,7 +24,7 @@ with sync_playwright() as playwright:
     page = browser.new_page(no_viewport=True)  
 
     # Goto to website
-    page.goto("https://www.letskodeit.com/practice")
+    page.goto(url)
 
     # Close The Browser
     browser.close()
