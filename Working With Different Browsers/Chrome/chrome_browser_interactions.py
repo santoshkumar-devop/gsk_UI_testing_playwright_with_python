@@ -3,6 +3,9 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as playwright:
     # Launch the Chrome Browser in Headless Mode
     # browser = playwright.chromium.launch()
+
+    # Print The Browser Type
+    # print(browser.browser_type)
     
     # Launch the Chrome Browser in Headful Mode
     # browser = playwright.chromium.launch(headless=False)
@@ -14,8 +17,10 @@ with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=False, args=["--start-maximized"])
 
     # Open the New Page in Browser
-    page = browser.new_page(no_viewport=True)  
+    # page = browser.new_page()  
+
     # no_viewport=True, gives you more control over the viewport size and allows you to manage the browser window's size and behavior according to your requirements.
+    page = browser.new_page(no_viewport=True)  
 
     # Goto to website
     page.goto("https://www.letskodeit.com/practice")
