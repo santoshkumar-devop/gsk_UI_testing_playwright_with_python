@@ -11,3 +11,34 @@ Parallelization:
 
 #Privacy testing: 
 #        Browser contexts allow you to test privacy features such as browser fingerprinting or tracking protection by isolating browsing data between contexts.
+
+
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as playwright:
+    url = "https://playwright.dev/python/"
+    # Launch the Chrome Browser
+    browser = playwright.chromium.launch(headless=False, args=["--start-maximized"])
+    print(dir(browser))
+
+    context1=   browser.new_context(no_viewport=True)
+    page1 = context1.new_page()
+    page1.goto(url)
+
+    # To Print the all opened browser Contexts
+    print(browser.contexts)
+
+    context2 = browser.new_context(no_viewport=True)
+    page2 = context2.new_page()
+    page2.goto(url)
+
+    # To Print the all opened browser Contexts
+    print(browser.contexts)
+
+    # To Close the single browser context
+    context1.close()
+
+    # To Print the all opened browser Contexts
+    print(browser.contexts)
+
+    browser.close()
