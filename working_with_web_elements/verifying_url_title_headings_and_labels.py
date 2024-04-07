@@ -32,8 +32,11 @@ with sync_playwright() as playwright:
 ############################################################################
 
     # HEADINGS VALIDATION ( Positive Case )
-    # To verify Heading is visible
-    page.locator("//*[@class='title' and contains(., 'Automation Testing Practice')]").is_visible()
+
+    # Verifying heading is visible
+
+    heading = page.locator("//*[@class='title' and contains(., 'Automation Testing Practice')]").is_visible()
+    print('heading visible=', heading)  # prints true or false
 
     # To get the locator and verify text is present
     heading = page.locator('h1.title')
@@ -54,10 +57,12 @@ with sync_playwright() as playwright:
 ############################################################################
 
     # LABELS VALIDATION ( Positive Case )
-    # To verify Label is visible
-    page.locator("//*[@for='textbox' and contains(., 'Name:')]").is_visible()
 
-    # To get the locator and verify text is present
+    # Verifying label is visible
+    label = page.locator("//*[@for='textbox' and contains(., 'Name:')]").is_visible()
+    print('label visible=', label)  # prints true or false
+
+    # get the locator and verify text is present
     label = page.locator("//*[@for='textbox' and contains(., 'Name:')]")
     expect(label).to_have_text('Name:')
     # For loose validation
