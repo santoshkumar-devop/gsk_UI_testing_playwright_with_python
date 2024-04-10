@@ -13,9 +13,10 @@ with sync_playwright() as playwright:
 
 
     # Get the locator and verify Radio button is present
-    radio_button_value = page.locator("#female").input_value()
+    radio_button = page.locator("#female")
+    radio_button_value = radio_button.evaluate('(element) => element.parentElement.innerText')
     print('radio_button_text=', radio_button_value)
-    assert radio_button_value == 'female'
+    assert radio_button_value == 'Female'
 
     # Verify Radio button is not visible
     # radio_button = page.locator("#male")
