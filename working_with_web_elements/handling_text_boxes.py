@@ -8,7 +8,7 @@ with sync_playwright() as playwright:
     page.goto(url)
 
     # Verify Textbox is visible
-    textbox = page.locator("#name").is_visible()
+    textbox = page.locator("//*[@id='name' and @type='text']").is_visible()
     print('textbox_visible=', textbox)
 
 
@@ -57,3 +57,5 @@ with sync_playwright() as playwright:
     # Verify Textbox is disabled
     # textbox = page.locator("#name").is_disabled()
     # print('textbox_disabled=', textbox)
+
+
