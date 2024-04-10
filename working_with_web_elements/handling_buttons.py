@@ -43,3 +43,6 @@ with sync_playwright() as playwright:
     # click on the button
     button.click()
     print('Button Clicked')
+
+    # double click on the button
+    #page.locator("button[value='Submit']").dblclick()
